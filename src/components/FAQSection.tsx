@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How do you make money?",
-    a: "Right now, we are testing. Eventually, a small subscription fee unlocks unlimited swaps. Banks charge you whether you win or lose — we only charge if you win.",
+    a: "Each match costs 1 credit ($10). Your first 3 credits are free. We only charge when you use a credit to connect — no hidden fees, no rate markups.",
   },
   {
     q: "I'm a student at KSU/KAUST, can I join?",

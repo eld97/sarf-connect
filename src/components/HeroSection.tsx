@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 interface HeroSectionProps {
   onFindMatch: () => void;
@@ -10,7 +11,6 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
     <section className="relative overflow-hidden">
       <div className="container py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -23,12 +23,12 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.1]">
-              Stop Losing 10% to the Bank.{" "}
-              <span className="text-primary">Swap Directly.</span>
+              Skip the Bank Fees.{" "}
+              <span className="text-primary">Connect & Swap Directly.</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg">
-              Get the mid-market rate. No hidden fees. Only for verified students and professionals in KSA.
+              We connect you with verified peers to exchange currency on your own terms. No rates set by us — just a $10 credit to match. 3 free credits to start.
             </p>
 
             <p className="text-lg font-arabic text-muted-foreground" dir="rtl">
@@ -49,14 +49,13 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
             </p>
           </motion.div>
 
-          {/* Right: Rate Widget */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.2, 0, 0, 1] }}
             className="md:sticky md:top-24"
           >
-            <RateWidget />
+            <HowItWorksWidget />
           </motion.div>
         </div>
       </div>
@@ -64,38 +63,51 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
   );
 };
 
-const RateWidget = () => {
+const HowItWorksWidget = () => {
   return (
-    <div className="rounded-xl p-6 bg-card shadow-card border border-border space-y-4">
+    <div className="rounded-xl p-6 bg-card shadow-card border border-border space-y-5">
       <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-        Rate Comparison — SAR/USD
+        How NomadNest Works
       </div>
 
-      <div className="flex justify-between items-end pb-4 border-b border-border">
-        <div>
-          <span className="text-sm font-medium text-muted-foreground">Bank Rate</span>
-          <span className="block text-2xl font-bold text-foreground tabular-nums">3.75</span>
+      <div className="space-y-4">
+        <div className="flex gap-4 items-start">
+          <span className="shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">1</span>
+          <div>
+            <span className="text-sm font-semibold text-foreground block">Post your request</span>
+            <span className="text-sm text-muted-foreground">Tell us what currency you have and what you need.</span>
+          </div>
         </div>
-        <span className="text-sm text-muted-foreground line-through tabular-nums">250 SAR fee</span>
+        <div className="flex gap-4 items-start">
+          <span className="shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">2</span>
+          <div>
+            <span className="text-sm font-semibold text-foreground block">Get matched</span>
+            <span className="text-sm text-muted-foreground">We connect you with a verified peer. Uses 1 credit.</span>
+          </div>
+        </div>
+        <div className="flex gap-4 items-start">
+          <span className="shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">3</span>
+          <div>
+            <span className="text-sm font-semibold text-foreground block">Decide your rate together</span>
+            <span className="text-sm text-muted-foreground">Chat, negotiate, and swap on your own terms.</span>
+          </div>
+        </div>
       </div>
 
       <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-center">
           <div>
-            <span className="block text-xs font-bold text-emerald-700 uppercase tracking-wider">
-              Sarf Swap Rate
-            </span>
-            <span className="text-3xl font-bold text-emerald-900 tabular-nums">3.82</span>
-            <span className="block text-sm text-emerald-700 mt-1">Zero fees</span>
+            <span className="block text-xs font-bold text-emerald-700 uppercase tracking-wider">Cost per match</span>
+            <span className="text-2xl font-bold text-emerald-900 tabular-nums">$10</span>
           </div>
           <span className="px-2.5 py-1 bg-emerald-500 text-primary-foreground text-xs font-bold rounded-full">
-            Save 2.4%
+            3 Free Credits
           </span>
         </div>
       </div>
 
-      <div className="pt-2 text-xs text-muted-foreground text-center">
-        Rates updated in real-time from mid-market data
+      <div className="pt-1 text-xs text-muted-foreground text-center">
+        You set the rate. We just make the introduction.
       </div>
     </div>
   );

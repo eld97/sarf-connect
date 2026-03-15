@@ -7,16 +7,14 @@ import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import SignupModal from "@/components/SignupModal";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleFindMatch = () => {
-    // Track event
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "LeadGen_Start", {
-        event_category: "conversion",
-      });
+      (window as any).gtag("event", "LeadGen_Start", { event_category: "conversion" });
     }
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "Lead");
@@ -25,11 +23,8 @@ const Index = () => {
   };
 
   const handleGetAccess = () => {
-    // Track event
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "HighIntent_Pricing_Click", {
-        event_category: "conversion",
-      });
+      (window as any).gtag("event", "HighIntent_Pricing_Click", { event_category: "conversion" });
     }
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "InitiateCheckout");
@@ -39,14 +34,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navbar */}
       <nav className="sticky top-0 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container flex items-center justify-between h-14">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xs">S</span>
-            </div>
-            <span className="font-semibold text-foreground">Sarf Swap</span>
+            <img src={logo} alt="NomadNest logo" className="w-7 h-7 object-contain" />
+            <span className="font-semibold text-foreground">NomadNest</span>
           </div>
           <button
             onClick={handleFindMatch}

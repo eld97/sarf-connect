@@ -2,13 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const feedItems = [
-  { name: "Ahmed K.", action: "needs USD", rate: "3.81", badge: "University ID Verified", university: "KSU" },
-  { name: "Layla M.", action: "has SAR", rate: "3.82", badge: "Business Profile Verified", university: "" },
-  { name: "Omar S.", action: "needs EUR", rate: "4.62", badge: "Student (KSU) Verified", university: "KSU" },
-  { name: "Sara A.", action: "has USD", rate: "3.80", badge: "Student (KAUST) Verified", university: "KAUST" },
-  { name: "Khaled R.", action: "needs GBP", rate: "4.71", badge: "Professional Verified", university: "" },
-  { name: "Fatima H.", action: "has EGP", rate: "0.12", badge: "University ID Verified", university: "KAU" },
-  { name: "Youssef B.", action: "needs SAR", rate: "3.83", badge: "Student (KFUPM) Verified", university: "KFUPM" },
+  { name: "Ahmed K.", action: "needs USD → has SAR", badge: "University ID Verified" },
+  { name: "Layla M.", action: "has SAR → needs EUR", badge: "Business Profile Verified" },
+  { name: "Omar S.", action: "needs EUR → has USD", badge: "Student (KSU) Verified" },
+  { name: "Sara A.", action: "has USD → needs SAR", badge: "Student (KAUST) Verified" },
+  { name: "Khaled R.", action: "needs GBP → has SAR", badge: "Professional Verified" },
+  { name: "Fatima H.", action: "has EGP → needs SAR", badge: "University ID Verified" },
+  { name: "Youssef B.", action: "needs SAR → has PKR", badge: "Student (KFUPM) Verified" },
 ];
 
 const LiveFeed = () => {
@@ -62,7 +62,6 @@ const LiveFeed = () => {
                     <div>
                       <span className="text-sm font-semibold text-foreground">{item.name}</span>
                       <span className="text-sm text-muted-foreground"> {item.action}</span>
-                      <span className="text-sm font-semibold text-foreground tabular-nums"> @ {item.rate}</span>
                     </div>
                   </div>
                   <span className="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 font-medium border border-emerald-100 shrink-0 hidden sm:inline">
@@ -75,7 +74,7 @@ const LiveFeed = () => {
         </div>
 
         <p className="text-sm text-muted-foreground mt-4">
-          Join <span className="font-semibold text-foreground">150+</span> testers swapping currency this week.
+          Join <span className="font-semibold text-foreground">150+</span> testers connecting this week.
         </p>
       </div>
     </section>
