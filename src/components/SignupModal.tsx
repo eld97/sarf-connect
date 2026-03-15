@@ -128,7 +128,7 @@ const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 We are validating demand. If you are selected for the beta, you will get{" "}
-                <span className="font-semibold text-foreground">3 months of Swap+ Pass for free</span>.
+                <span className="font-semibold text-foreground">3 free credits to start matching</span>.
               </p>
               <p className="text-xs text-muted-foreground">
                 We'll reach out to <span className="font-medium">{form.email}</span> within 48 hours.
