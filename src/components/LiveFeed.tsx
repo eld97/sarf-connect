@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 
 const feedItems = [
   { name: "A••••• K.", action: "needs USD → has SAR", badge: "University ID Verified" },
-  { name: "L•••• M.", action: "has SAR → needs EUR", badge: "Business Profile Verified" },
-  { name: "O••• S.", action: "needs EUR → has USD", badge: "Student (KSU) Verified" },
+  { name: "L•••• M.", action: "has SAR → needs USD", badge: "Business Profile Verified" },
+  { name: "O••• S.", action: "needs USD → has SAR", badge: "Student (KSU) Verified" },
   { name: "S••• A.", action: "has USD → needs SAR", badge: "Student (KAUST) Verified" },
-  { name: "K••••• R.", action: "needs GBP → has SAR", badge: "Professional Verified" },
-  { name: "F••••• H.", action: "has EGP → needs SAR", badge: "University ID Verified" },
-  { name: "Y•••••• B.", action: "needs SAR → has PKR", badge: "Student (KFUPM) Verified" },
+  { name: "K••••• R.", action: "needs SAR → has USD", badge: "Professional Verified" },
+  { name: "F••••• H.", action: "has USD → needs SAR", badge: "University ID Verified" },
+  { name: "Y•••••• B.", action: "needs SAR → has USD", badge: "Student (KFUPM) Verified" },
 ];
 
 const LiveFeed = () => {

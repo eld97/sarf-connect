@@ -8,7 +8,7 @@ interface SignupModalProps {
   onClose: () => void;
 }
 
-const currencies = ["USD", "SAR", "EUR", "GBP", "EGP", "PKR", "PHP"];
+const currencies = ["USD", "SAR"];
 
 const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
   const [submitted, setSubmitted] = useState(false);
