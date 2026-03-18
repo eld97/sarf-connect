@@ -28,7 +28,7 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg">
-              We connect you with verified peers to exchange currency on your own terms. No rates set by us — just a $10 credit to match. 3 free credits to start.
+              Exchange currency with verified peers — no bank fees, no markups. <span className="font-semibold text-foreground">Your first 3 matches are completely free.</span>
             </p>
 
             <p className="text-lg font-arabic text-muted-foreground" dir="rtl">
