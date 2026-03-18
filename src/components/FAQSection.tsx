@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What currencies are supported?",
-    a: "Currently SAR, USD, EUR, GBP, and EGP. More currencies are added based on community demand.",
+    a: "Currently SAR and USD. More currencies are coming soon based on community demand — stay tuned!",
   },
   {
     q: "What if I can't find a match?",
