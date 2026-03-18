@@ -2,13 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const feedItems = [
-  { name: "Ahmed K.", action: "needs USD → has SAR", badge: "University ID Verified" },
-  { name: "Layla M.", action: "has SAR → needs EUR", badge: "Business Profile Verified" },
-  { name: "Omar S.", action: "needs EUR → has USD", badge: "Student (KSU) Verified" },
-  { name: "Sara A.", action: "has USD → needs SAR", badge: "Student (KAUST) Verified" },
-  { name: "Khaled R.", action: "needs GBP → has SAR", badge: "Professional Verified" },
-  { name: "Fatima H.", action: "has EGP → needs SAR", badge: "University ID Verified" },
-  { name: "Youssef B.", action: "needs SAR → has PKR", badge: "Student (KFUPM) Verified" },
+  { name: "A••••• K.", action: "needs USD → has SAR", badge: "University ID Verified" },
+  { name: "L•••• M.", action: "has SAR → needs EUR", badge: "Business Profile Verified" },
+  { name: "O••• S.", action: "needs EUR → has USD", badge: "Student (KSU) Verified" },
+  { name: "S••• A.", action: "has USD → needs SAR", badge: "Student (KAUST) Verified" },
+  { name: "K••••• R.", action: "needs GBP → has SAR", badge: "Professional Verified" },
+  { name: "F••••• H.", action: "has EGP → needs SAR", badge: "University ID Verified" },
+  { name: "Y•••••• B.", action: "needs SAR → has PKR", badge: "Student (KFUPM) Verified" },
 ];
 
 const LiveFeed = () => {
