@@ -94,16 +94,19 @@ const HowItWorksWidget = () => {
         </div>
       </div>
 
-      <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
-        <div className="flex justify-between items-center">
-          <div>
-            <span className="block text-xs font-bold text-emerald-700 uppercase tracking-wider">Cost per match</span>
-            <span className="text-2xl font-bold text-emerald-900 tabular-nums">$10</span>
-          </div>
-          <span className="px-2.5 py-1 bg-emerald-500 text-primary-foreground text-xs font-bold rounded-full">
-            3 Free Credits
-          </span>
-        </div>
+      <div className="p-5 bg-emerald-50 rounded-lg border border-emerald-100 text-center">
+        <span className="px-3 py-1 bg-emerald-500 text-primary-foreground text-xs font-bold rounded-full inline-block mb-2">
+          No Card Required
+        </span>
+        <span className="block text-2xl font-bold text-emerald-900 tabular-nums">
+          3 Free Matches
+        </span>
+        <span className="block text-sm text-emerald-700 mt-1">
+          Start exchanging today — completely free
+        </span>
+        <span className="block text-xs text-emerald-600/70 mt-2">
+          Need more? Additional matches are $10 each
+        </span>
       </div>
 
       <div className="pt-1 text-xs text-muted-foreground text-center">
