@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface SignupModalProps {
   isOpen: boolean;
@@ -12,10 +14,34 @@ const currencies = ["USD", "SAR"];
 
 const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", organization: "", currency: "" });
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
+    const { error } = await supabase.from("beta_signups").insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      organization: form.organization.trim(),
+      currency: form.currency,
+    });
+
+    setLoading(false);
+
+    if (error) {
+      toast({
+        title: "Something went wrong",
+        description: error.message.includes("duplicate")
+          ? "This email is already registered."
+          : "Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // Track event
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "CompleteRegistration", {
@@ -113,8 +139,8 @@ const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
                     ))}
                   </select>
                 </div>
-                <Button variant="hero" size="lg" className="w-full" type="submit">
-                  Secure My Spot
+                <Button variant="hero" size="lg" className="w-full" type="submit" disabled={loading}>
+                  {loading ? "Submitting..." : "Secure My Spot"}
                 </Button>
               </form>
             </>
