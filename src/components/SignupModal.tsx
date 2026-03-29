@@ -18,8 +18,30 @@ const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
   const [form, setForm] = useState({ name: "", email: "", organization: "", currency: "" });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
+    const { error } = await supabase.from("beta_signups").insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      organization: form.organization.trim(),
+      currency: form.currency,
+    });
+
+    setLoading(false);
+
+    if (error) {
+      toast({
+        title: "Something went wrong",
+        description: error.message.includes("duplicate")
+          ? "This email is already registered."
+          : "Please try again later.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // Track event
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "CompleteRegistration", {
