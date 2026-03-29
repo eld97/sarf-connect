@@ -139,8 +139,8 @@ const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
                     ))}
                   </select>
                 </div>
-                <Button variant="hero" size="lg" className="w-full" type="submit">
-                  Secure My Spot
+                <Button variant="hero" size="lg" className="w-full" type="submit" disabled={loading}>
+                  {loading ? "Submitting..." : "Secure My Spot"}
                 </Button>
               </form>
             </>
