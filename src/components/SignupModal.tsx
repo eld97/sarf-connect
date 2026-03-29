@@ -14,7 +14,9 @@ const currencies = ["USD", "SAR"];
 
 const SignupModal = ({ isOpen, onClose }: SignupModalProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", organization: "", currency: "" });
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
