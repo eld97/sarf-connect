@@ -44,9 +44,6 @@ const HeroSection = ({ onFindMatch }: HeroSectionProps) => {
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground">
-              Join <span className="font-semibold text-foreground">150+</span> verified testers swapping this week.
-            </p>
           </motion.div>
 
           <motion.div
